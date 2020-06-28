@@ -1,0 +1,2 @@
+2020-06-28 09:41:20.598 [main] [] WARN c.i.s.BeetlSqlStarterClassPathScanner [doScan,60] - BeetlSql没有在 '[com.chen.springbatch.dao.local]' 包中找到任何Mapper，请检查配置
+2020-06-28 09:41:21.682 [main] [] WARN o.m.s.mapper.ClassPathMapperScanner [warn,44] - No MyBatis mapper was found in '[com.chen.springbatch]' package. Please check your configuration.

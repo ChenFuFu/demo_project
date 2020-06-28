@@ -1,0 +1,87 @@
+2020-06-28 09:41:16.835 [main] [] INFO c.c.s.SpringbathApplication [logStarting,50] - Starting SpringbathApplication on lcdeMacBook-Air.local with PID 19182 (/Users/lc/Documents2/workspace/ideaProject/demo_project/springbath/target/classes started by lc in /Users/lc/Documents2/workspace/ideaProject/demo_project/springbath)
+2020-06-28 09:41:16.836 [main] [] INFO c.c.s.SpringbathApplication [logStartupProfileInfo,679] - The following profiles are active: dev
+2020-06-28 09:41:25.391 [main] [] INFO o.s.b.w.e.tomcat.TomcatWebServer [initialize,90] - Tomcat initialized with port(s): 8080 (http)
+2020-06-28 09:41:25.443 [main] [] INFO o.a.coyote.http11.Http11NioProtocol [log,173] - Initializing ProtocolHandler ["http-nio-8080"]
+2020-06-28 09:41:25.474 [main] [] INFO o.a.catalina.core.StandardService [log,173] - Starting service [Tomcat]
+2020-06-28 09:41:25.475 [main] [] INFO o.a.catalina.core.StandardEngine [log,173] - Starting Servlet engine: [Apache Tomcat/9.0.17]
+2020-06-28 09:41:25.857 [main] [] INFO o.a.c.c.C.[.[localhost].[/example] [log,173] - Initializing Spring embedded WebApplicationContext
+2020-06-28 09:41:25.858 [main] [] INFO o.s.web.context.ContextLoader [prepareWebApplicationContext,296] - Root WebApplicationContext: initialization completed in 8733 ms
+2020-06-28 09:41:26.230 [main] [] INFO o.q.e.s.QuartzInitializerListener [contextInitialized,147] - Quartz Initializer Servlet loaded, initializing Scheduler...
+2020-06-28 09:41:26.339 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1024] - Using ConnectionProvider class 'org.quartz.utils.C3p0PoolingConnectionProvider' for data source 'qzDS'
+2020-06-28 09:41:26.434 [MLog-Init-Reporter] [] INFO com.mchange.v2.log.MLog [log,212] - MLog clients using slf4j logging.
+2020-06-28 09:41:26.553 [main] [] INFO com.mchange.v2.c3p0.C3P0Registry [log,212] - Initializing c3p0-0.9.5.2 [built 08-December-2015 22:06:04 -0800; debug? true; trace: 10]
+2020-06-28 09:41:26.802 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1208] - Using default implementation for ThreadExecutor
+2020-06-28 09:41:26.808 [main] [] INFO org.quartz.simpl.SimpleThreadPool [initialize,268] - Job execution threads will use class loader of thread: main
+2020-06-28 09:41:26.853 [main] [] INFO o.quartz.core.SchedulerSignalerImpl [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-28 09:41:26.854 [main] [] INFO org.quartz.core.QuartzScheduler [<init>,229] - Quartz Scheduler v.2.3.1 created.
+2020-06-28 09:41:26.857 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [initialize,675] - Using thread monitor-based data access locking (synchronization).
+2020-06-28 09:41:26.859 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [initialize,59] - JobStoreTX initialized.
+2020-06-28 09:41:26.861 [main] [] INFO org.quartz.core.QuartzScheduler [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'QuartzScheduler' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.quartz.impl.jdbcjobstore.JobStoreTX' - which supports persistence. and is not clustered.
+
+2020-06-28 09:41:26.862 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1362] - Quartz scheduler 'QuartzScheduler' initialized from default resource file in Quartz package: 'quartz.properties'
+2020-06-28 09:41:26.863 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1366] - Quartz scheduler version: 2.3.1
+2020-06-28 09:41:26.946 [main] [] INFO c.m.v.c.i.AbstractPoolBackedDataSource [log,212] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfltaa1wz25iu1xm2ctu|696b4a95, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfltaa1wz25iu1xm2ctu|696b4a95, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/my_quartz?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 120, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2020-06-28 09:41:28.422 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,866] - Freed 0 triggers from 'acquired' / 'blocked' state.
+2020-06-28 09:41:28.460 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverMisfiredJobs,973] - Handling 1 trigger(s) that missed their scheduled fire-time.
+2020-06-28 09:41:29.335 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,110] - HikariPool-1 - Starting...
+2020-06-28 09:41:29.435 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,123] - HikariPool-1 - Start completed.
+2020-06-28 09:41:29.898 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,110] - HikariPool-2 - Starting...
+2020-06-28 09:41:29.972 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,123] - HikariPool-2 - Start completed.
+2020-06-28 09:41:30.358 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,110] - HikariPool-3 - Starting...
+2020-06-28 09:41:30.429 [main] [] INFO com.zaxxer.hikari.HikariDataSource [getConnection,123] - HikariPool-3 - Start completed.
+2020-06-28 09:41:30.465 [main] [] INFO org.quartz.core.QuartzScheduler [setJobFactory,2293] - JobFactory set to: com.chen.springbatch.quartz.config.MyJobFactory$$EnhancerBySpringCGLIB$$4c059525@4aa31ffc
+2020-06-28 09:41:30.466 [main] [] INFO org.quartz.core.QuartzScheduler [start,547] - Scheduler QuartzScheduler_$_NON_CLUSTERED started.
+2020-06-28 09:41:30.634 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1024] - Using ConnectionProvider class 'org.quartz.utils.C3p0PoolingConnectionProvider' for data source 'qzDS'
+2020-06-28 09:41:30.787 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1208] - Using default implementation for ThreadExecutor
+2020-06-28 09:41:30.787 [main] [] INFO org.quartz.simpl.SimpleThreadPool [initialize,268] - Job execution threads will use class loader of thread: main
+2020-06-28 09:41:30.796 [main] [] INFO o.quartz.core.SchedulerSignalerImpl [<init>,61] - Initialized Scheduler Signaller of type: class org.quartz.core.SchedulerSignalerImpl
+2020-06-28 09:41:30.796 [main] [] INFO org.quartz.core.QuartzScheduler [<init>,229] - Quartz Scheduler v.2.3.1 created.
+2020-06-28 09:41:30.796 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [initialize,675] - Using thread monitor-based data access locking (synchronization).
+2020-06-28 09:41:30.797 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [initialize,59] - JobStoreTX initialized.
+2020-06-28 09:41:30.797 [main] [] INFO org.quartz.core.QuartzScheduler [initialize,294] - Scheduler meta-data: Quartz Scheduler (v2.3.1) 'schedulerFactoryBean' with instanceId 'NON_CLUSTERED'
+  Scheduler class: 'org.quartz.core.QuartzScheduler' - running locally.
+  NOT STARTED.
+  Currently in standby mode.
+  Number of jobs executed: 0
+  Using thread pool 'org.quartz.simpl.SimpleThreadPool' - with 5 threads.
+  Using job-store 'org.quartz.impl.jdbcjobstore.JobStoreTX' - which supports persistence. and is not clustered.
+
+2020-06-28 09:41:30.797 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1362] - Quartz scheduler 'schedulerFactoryBean' initialized from an externally provided properties instance.
+2020-06-28 09:41:30.798 [main] [] INFO org.quartz.impl.StdSchedulerFactory [instantiate,1366] - Quartz scheduler version: 2.3.1
+2020-06-28 09:41:30.800 [main] [] INFO org.quartz.core.QuartzScheduler [setJobFactory,2293] - JobFactory set to: com.chen.springbatch.quartz.config.MyJobFactory$$EnhancerBySpringCGLIB$$4c059525@4aa31ffc
+2020-06-28 09:41:32.189 [main] [] INFO o.s.s.c.ThreadPoolTaskExecutor [initialize,171] - Initializing ExecutorService 'applicationTaskExecutor'
+2020-06-28 09:41:33.672 [main] [] INFO o.s.b.c.r.s.JobRepositoryFactoryBean [afterPropertiesSet,184] - No database type set, using meta data indicating: MYSQL
+2020-06-28 09:41:33.751 [main] [] INFO o.s.b.c.l.support.SimpleJobLauncher [afterPropertiesSet,204] - No TaskExecutor has been set, defaulting to synchronous executor.
+2020-06-28 09:41:34.274 [main] [] INFO o.s.s.quartz.SchedulerFactoryBean [startScheduler,726] - Starting Quartz Scheduler now
+2020-06-28 09:41:34.289 [main] [] INFO c.m.v.c.i.AbstractPoolBackedDataSource [log,212] - Initializing c3p0 pool... com.mchange.v2.c3p0.ComboPooledDataSource [ acquireIncrement -> 3, acquireRetryAttempts -> 30, acquireRetryDelay -> 1000, autoCommitOnClose -> false, automaticTestTable -> null, breakAfterAcquireFailure -> false, checkoutTimeout -> 0, connectionCustomizerClassName -> null, connectionTesterClassName -> com.mchange.v2.c3p0.impl.DefaultConnectionTester, contextClassLoaderSource -> caller, dataSourceName -> z8kfltaa1wz25iu1xm2ctu|1e3ff233, debugUnreturnedConnectionStackTraces -> false, description -> null, driverClass -> com.mysql.cj.jdbc.Driver, extensions -> {}, factoryClassLocation -> null, forceIgnoreUnresolvedTransactions -> false, forceSynchronousCheckins -> false, forceUseNamedDriverClass -> false, identityToken -> z8kfltaa1wz25iu1xm2ctu|1e3ff233, idleConnectionTestPeriod -> 0, initialPoolSize -> 3, jdbcUrl -> jdbc:mysql://localhost:3306/my_quartz?useUnicode=true&characterEncoding=UTF-8, maxAdministrativeTaskTime -> 0, maxConnectionAge -> 0, maxIdleTime -> 0, maxIdleTimeExcessConnections -> 0, maxPoolSize -> 10, maxStatements -> 0, maxStatementsPerConnection -> 120, minPoolSize -> 1, numHelperThreads -> 3, preferredTestQuery -> null, privilegeSpawnedThreads -> false, properties -> {user=******, password=******}, propertyCycle -> 0, statementCacheNumDeferredCloseThreads -> 0, testConnectionOnCheckin -> false, testConnectionOnCheckout -> false, unreturnedConnectionTimeout -> 0, userOverrides -> {}, usesTraditionalReflectiveProxies -> false ]
+2020-06-28 09:41:34.475 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,866] - Freed 0 triggers from 'acquired' / 'blocked' state.
+2020-06-28 09:41:34.496 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,876] - Recovering 0 jobs that were in-progress at the time of the last shut-down.
+2020-06-28 09:41:34.496 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,889] - Recovery complete.
+2020-06-28 09:41:34.503 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,896] - Removed 0 'complete' triggers.
+2020-06-28 09:41:34.515 [main] [] INFO o.q.impl.jdbcjobstore.JobStoreTX [recoverJobs,901] - Removed 0 stale fired job entries.
+2020-06-28 09:41:34.535 [main] [] INFO org.quartz.core.QuartzScheduler [start,547] - Scheduler schedulerFactoryBean_$_NON_CLUSTERED started.
+2020-06-28 09:41:34.773 [main] [] INFO o.a.coyote.http11.Http11NioProtocol [log,173] - Starting ProtocolHandler ["http-nio-8080"]
+2020-06-28 09:41:34.890 [main] [] INFO o.s.b.w.e.tomcat.TomcatWebServer [start,204] - Tomcat started on port(s): 8080 (http) with context path '/example'
+2020-06-28 09:41:34.903 [main] [] INFO c.c.s.SpringbathApplication [logStarted,59] - Started SpringbathApplication in 22.21 seconds (JVM running for 25.85)
+2020-06-28 09:42:11.524 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [standby,585] - Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-06-28 09:42:11.529 [Thread-66] [] INFO o.s.s.c.ThreadPoolTaskExecutor [shutdown,208] - Shutting down ExecutorService 'applicationTaskExecutor'
+2020-06-28 09:42:11.530 [Thread-66] [] INFO o.s.s.quartz.SchedulerFactoryBean [destroy,844] - Shutting down Quartz Scheduler
+2020-06-28 09:42:11.530 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [shutdown,666] - Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutting down.
+2020-06-28 09:42:11.530 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [standby,585] - Scheduler schedulerFactoryBean_$_NON_CLUSTERED paused.
+2020-06-28 09:42:11.538 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [shutdown,740] - Scheduler schedulerFactoryBean_$_NON_CLUSTERED shutdown complete.
+2020-06-28 09:42:11.538 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [shutdown,666] - Scheduler QuartzScheduler_$_NON_CLUSTERED shutting down.
+2020-06-28 09:42:11.538 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [standby,585] - Scheduler QuartzScheduler_$_NON_CLUSTERED paused.
+2020-06-28 09:42:11.542 [Thread-66] [] INFO org.quartz.core.QuartzScheduler [shutdown,740] - Scheduler QuartzScheduler_$_NON_CLUSTERED shutdown complete.
+2020-06-28 09:42:11.543 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,350] - HikariPool-2 - Shutdown initiated...
+2020-06-28 09:42:11.574 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,352] - HikariPool-2 - Shutdown completed.
+2020-06-28 09:42:11.575 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,350] - HikariPool-1 - Shutdown initiated...
+2020-06-28 09:42:11.599 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,352] - HikariPool-1 - Shutdown completed.
+2020-06-28 09:42:11.600 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,350] - HikariPool-3 - Shutdown initiated...
+2020-06-28 09:42:11.619 [Thread-66] [] INFO com.zaxxer.hikari.HikariDataSource [close,352] - HikariPool-3 - Shutdown completed.
+2020-06-28 09:42:11.648 [Thread-66] [] INFO o.q.e.s.QuartzInitializerListener [contextDestroyed,264] - Quartz Scheduler successful shutdown.
