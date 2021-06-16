@@ -31,3 +31,5 @@ build/
 
 ### maven ###
 .mvn
+
+**/logs/
