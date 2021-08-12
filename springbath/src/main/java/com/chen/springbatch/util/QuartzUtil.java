@@ -28,7 +28,7 @@ public class QuartzUtil {
      * 开始执行任务
      */
     public void startJob() {
-        try {
+        try  {
             scheduler.start();
         } catch (SchedulerException e) {
             e.printStackTrace();
@@ -40,7 +40,8 @@ public class QuartzUtil {
      * @param
      * @throws SchedulerException
      */
-    public String addJob(QuartzJob quartzJob) throws SchedulerException, ClassNotFoundException, IllegalAccessException, InstantiationException {
+    public String addJob(QuartzJob quartzJob) throws SchedulerException,
+        ClassNotFoundException, IllegalAccessException, InstantiationException {
         //通过类名获取实体类，即要执行的定时任务的类
         Class jobBean = Class.forName(quartzJob.getBeanName());
         Job executeJob = (Job)jobBean.newInstance();

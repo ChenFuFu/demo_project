@@ -50,6 +50,7 @@ public class QuartzController {
         quartzJob.setJobId(String.valueOf(System.currentTimeMillis()));
         quartzJob.setBeanName("com.chen.springbatch.quartz.job.SpringBathJob");
         quartzJob.setJobStatus(QuartzConstants.STATE_NORMAL);
+        
         Integer addjob = quartzJobDao.getSQLManager().update("quartzJob.insertQuartzJob", quartzJob);
         if (quartzJob.getCronExpression().isEmpty()) {
             return "启动失败";
@@ -170,7 +171,8 @@ public class QuartzController {
 
         int recJob = quartzJobDao.getSQLManager().update("quartzJob.updateQuartzJob", quartzJob);
         if (recJob == 1) {
-            List<QuartzJob> getQuartzJobInfo = quartzJobDao.getSQLManager().select("quartzJob.selectQuartzJob",QuartzJob.class, quartzJob);
+            List<QuartzJob> getQuartzJobInfo = quartzJobDao.getSQLManager()
+                .select("quartzJob.selectQuartzJob",QuartzJob.class, quartzJob);
             try {
                 quartzUtil.recoverJob(getQuartzJobInfo.get(0));
                 return "true";
