@@ -4,6 +4,12 @@ import com.chen.springbatch.batch.config.BeetlsqlBatchConfig;
 import com.chen.springbatch.batch.service.JobLauncherService;
 import com.chen.springbatch.batch.service.SpringBathService;
 import com.chen.springbatch.quartz.job.SpringBathJob;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Iterator;
+import java.util.List;
+import java.util.stream.Stream;
+
 import lombok.extern.slf4j.Slf4j;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,8 +34,9 @@ import static org.quartz.TriggerBuilder.newTrigger;
  * @since 2019/6/1
  **/
 
-@RunWith(SpringRunner.class)
-@SpringBootTest(classes = {SpringbathApplication.class, BeetlsqlBatchConfig.class})
+//@RunWith(SpringRunner.class)
+//@SpringBootTest(classes = {SpringbathApplication.class, BeetlsqlBatchConfig.class})
+@SpringBootTest
 @Slf4j
 public class SpringbathApplicationTests {
 
@@ -78,6 +85,43 @@ public class SpringbathApplicationTests {
     }
 
 
+    @Test
+    public void listDemo() {
+        List<String> list = new ArrayList<>();
+        list.add("1");
+        list.add("2");
+        Iterator<String> iterator = list.iterator();
+ /*       while (iterator.hasNext()) {
+            String item = iterator.next();
+            if ("1".equals(item)) {
+                iterator.remove();
+            }
+        }*/
+
+        for (String item : list) {
+            if ("2".equals(item)) {
+                list.remove(item); }
+        }
+
+        list.forEach(System.out::println);
+    }
+
+    @Test
+    public void forDemo() {
+        for (int i = 0; i < 3; i++) {
+            System.out.println("wai" + i);
+            for (i = 0; i < 2; i++) {
+                System.out.println("nei" + i);
+            }
+        }
+    }
+
+    @Test
+    public void splitStr() {
+        String url = "jdbc:orcale:thin:@127..0.0.1:ora8i";
+        String[] splitStr = url.split(":");
+        System.out.println(splitStr[1]);
+    }
 }
 
 

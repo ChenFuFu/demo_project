@@ -1,4 +1,4 @@
-package com.chen.springbase.bean;
+package com.chen.springbase.entity;
 
 /**
  * @Author Chen
@@ -6,7 +6,7 @@ package com.chen.springbase.bean;
  * @Time 20:30:09
  * @Description 用户信息
  **/
-public class Role {
+public class RoleEntity {
 
     private static final long serialVersionUID = 1L;
 
@@ -26,7 +26,7 @@ public class Role {
     private String desc;
 
 
-    public Role() {
+    public RoleEntity() {
     }
 
     public Integer getId() {

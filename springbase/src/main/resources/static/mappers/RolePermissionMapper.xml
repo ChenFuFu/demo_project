@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.springbase.mapper.RolePermissionMapper">
+
+    <resultMap id="BaseResultMap" type="com.chen.springbase.entity.RolePermissionEntity" >
+        <result column="id" property="id" />
+        <result column="role_id" property="roleId" />
+        <result column="permission_id" property="permissionId" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+                role_id,
+                permission_id
+    </sql>
+
+    <sql id="Base_NotNullColumn_List">
+        <if test="id != null and id != '' ">
+            id,
+        </if>
+        <if test="role_id != null and role_id != '' ">
+            role_id,
+        </if>
+        <if test="permission_id != null and permission_id != '' ">
+            permission_id
+        </if>
+    </sql>
+
+    <sql id="Base_Where_List">
+        <if test="id != null and id != '' ">
+            AND #{id}
+        </if>
+        <if test="role_id != null and role_id != '' ">
+            AND #{roleId}
+        </if>
+        <if test="permission_id != null and permission_id != '' ">
+            AND #{permissionId}
+        </if>
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.chen.springbase.entity.RolePermissionEntity">
+        INSERT INTO role_permission
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="null != roleId and '' != roleId">
+                role_id,
+            </if>
+            <if test="null != permissionId and '' != permissionId">
+                permission_id
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="null != roleId and '' != roleId">
+                #{roleId},
+            </if>
+            <if test="null != permissionId and '' != permissionId">
+                #{permissionId}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM role_permission
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.chen.springbase.entity.RolePermissionEntity">
+        UPDATE role_permission
+        <set>
+            <if test="null != roleId and '' != roleId">role_id = #{roleId},</if>
+            <if test="null != permissionId and '' != permissionId">permission_id = #{permissionId}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM role_permission
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM role_permission
+        <where>
+            <include refid="Base_Where_List" />
+        </where>
+        <if test="offset != null and  pageSize ！= null">
+            LIMIT #{offset}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM role_permission
+        <where>
+            <include refid="Base_Where_List" />
+        </where>
+    </select>
+
+</mapper>

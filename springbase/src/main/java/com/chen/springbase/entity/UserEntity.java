@@ -1,4 +1,4 @@
-package com.chen.springbase.bean;
+package com.chen.springbase.entity;
 
 /**
  * @Author Chen
@@ -6,7 +6,7 @@ package com.chen.springbase.bean;
  * @Time 19:33:52
  * @Description 用户信息表
  **/
-public class User {
+public class UserEntity {
 
     /**
      * id
@@ -29,7 +29,7 @@ public class User {
     private String account;
 
 
-    public User() {
+    public UserEntity() {
     }
 
     public Long getId() {

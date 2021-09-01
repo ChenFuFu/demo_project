@@ -1,4 +1,4 @@
-package com.chen.springbase.entriy;
+package com.chen.springbase.entity;
 
 
 /**
