@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.chen.springbase.mapper.UserRoleMapper">
+
+    <resultMap id="BaseResultMap" type="com.chen.springbase.entity.UserRoleEntity" >
+        <result column="id" property="id" />
+        <result column="user_id" property="userId" />
+        <result column="role_id" property="roleId" />
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,
+                user_id,
+                role_id
+    </sql>
+
+    <sql id="Base_NotNullColumn_List">
+        <if test="id != null and id != '' ">
+            id,
+        </if>
+        <if test="user_id != null and user_id != '' ">
+            user_id,
+        </if>
+        <if test="role_id != null and role_id != '' ">
+            role_id
+        </if>
+    </sql>
+
+    <sql id="Base_Where_List">
+        <if test="id != null and id != '' ">
+            AND #{id}
+        </if>
+        <if test="user_id != null and user_id != '' ">
+            AND #{userId}
+        </if>
+        <if test="role_id != null and role_id != '' ">
+            AND #{roleId}
+        </if>
+    </sql>
+
+    <insert id="insert" useGeneratedKeys="true" keyColumn="id" keyProperty="id" parameterType="com.chen.springbase.entity.UserRoleEntity">
+        INSERT INTO user_role
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="null != userId and '' != userId">
+                user_id,
+            </if>
+            <if test="null != roleId and '' != roleId">
+                role_id
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="null != userId and '' != userId">
+                #{userId},
+            </if>
+            <if test="null != roleId and '' != roleId">
+                #{roleId}
+            </if>
+        </trim>
+    </insert>
+
+    <delete id="delete" >
+        DELETE FROM user_role
+        WHERE id = #{id}
+    </delete>
+
+    <update id="update" parameterType="com.chen.springbase.entity.UserRoleEntity">
+        UPDATE user_role
+        <set>
+            <if test="null != userId and '' != userId">user_id = #{userId},</if>
+            <if test="null != roleId and '' != roleId">role_id = #{roleId}</if>
+        </set>
+        WHERE id = #{id}
+    </update>
+
+
+    <select id="load" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM user_role
+        WHERE id = #{id}
+    </select>
+
+    <select id="pageList" resultMap="BaseResultMap">
+        SELECT <include refid="Base_Column_List" />
+        FROM user_role
+        <where>
+            <include refid="Base_Where_List" />
+        </where>
+        <if test="offset != null and  pageSize ！= null">
+            LIMIT #{offset}, #{pageSize}
+        </if>
+    </select>
+
+    <select id="pageListCount" resultType="java.lang.Integer">
+        SELECT count(1)
+        FROM user_role
+        <where>
+            <include refid="Base_Where_List" />
+        </where>
+    </select>
+
+</mapper>
