@@ -1,7 +1,8 @@
 package com.chen.springbase.controller;
 
-import org.springframework.stereotype.Controller;
+import com.chen.springbase.entity.RoleEntity;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 /**
  * @Author Chen
@@ -10,8 +11,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @Description
  **/
 
-@Controller
+@RestController
 @RequestMapping("/user/")
 public class LoginController {
-
+    public void inde (RoleEntity roleEntity) {
+        System.out.println(roleEntity);
+    }
 }

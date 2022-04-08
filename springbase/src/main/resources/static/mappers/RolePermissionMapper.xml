@@ -80,7 +80,7 @@
         WHERE id = #{id}
     </select>
 
-    <select id="pageList" resultMap="BaseResultMap">
+    <select id="pageList"  resultMap="BaseResultMap">
         SELECT <include refid="Base_Column_List" />
         FROM role_permission
         <where>
