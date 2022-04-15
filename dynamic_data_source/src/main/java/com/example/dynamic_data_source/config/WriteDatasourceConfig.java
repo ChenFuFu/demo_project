@@ -10,7 +10,6 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Primary;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.TransactionManager;
 
 import javax.sql.DataSource;
 
@@ -30,12 +29,13 @@ public class WriteDatasourceConfig {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(writeDataSource());
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResource("class:mappers/write/*.xml"));
+                .getResources("classpath:**/mappers/write/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 
     @Bean
-    public TransactionManager writeTransactionManager() {
+    @Primary
+    public DataSourceTransactionManager writeTransactionManager() {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
         transactionManager.setDataSource(writeDataSource());
         return transactionManager;

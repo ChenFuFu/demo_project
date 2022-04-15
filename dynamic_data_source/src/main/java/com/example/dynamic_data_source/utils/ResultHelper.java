@@ -28,15 +28,22 @@ public class ResultHelper {
         return resultMap;
     }
 
+    public static Map<String, Object> paramsException() {
+        resultMap.put("code", "A0001");
+        resultMap.put("msg", "参数异常");
+        return resultMap;
+    }
+
     public static Map<String, Object> systemException() {
         resultMap.put("code", "B0001");
         resultMap.put("msg", "系统异常");
         return resultMap;
     }
 
-    public static Map<String, Object> paramsException() {
-        resultMap.put("code", "A0001");
-        resultMap.put("msg", "参数异常");
+    public static Map<String, Object> systemException(String msg) {
+        resultMap.put("code", "B0001");
+        resultMap.put("msg", msg);
         return resultMap;
     }
+
 }

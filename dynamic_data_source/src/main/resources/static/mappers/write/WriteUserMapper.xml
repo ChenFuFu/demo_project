@@ -12,7 +12,7 @@
     </sql>
 
     <insert id="addWriteUser" parameterType="com.example.dynamic_data_source.entity.write.WriteUser">
-        insert into read_user
+        insert into write_user
         <trim prefix="(" suffix=")" suffixOverrides=",">
             <if test="userName!= null and userName != ''">
                 user_name,
@@ -26,7 +26,7 @@
     </insert>
 
     <select id="queryWriteUserList" resultMap="BaseResultMap" parameterType="com.example.dynamic_data_source.entity.write.WriteUser">
-        select <include refid="Base_Column_List" /> from read_user
+        select <include refid="Base_Column_List" /> from write_user
     </select>
 
 </mapper>

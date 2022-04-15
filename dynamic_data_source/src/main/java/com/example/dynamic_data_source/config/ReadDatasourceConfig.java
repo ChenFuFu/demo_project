@@ -9,7 +9,6 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.support.PathMatchingResourcePatternResolver;
 import org.springframework.jdbc.datasource.DataSourceTransactionManager;
-import org.springframework.transaction.TransactionManager;
 
 import javax.sql.DataSource;
 
@@ -18,7 +17,7 @@ import javax.sql.DataSource;
 public class ReadDatasourceConfig {
 
     @Bean
-    @ConfigurationProperties(prefix = "spring.datasource.datasource2")
+    @ConfigurationProperties(prefix = "spring.datasource2")
     public DataSource readDataSource() {
         return DruidDataSourceBuilder.create().build();
     }
@@ -28,12 +27,12 @@ public class ReadDatasourceConfig {
         final SqlSessionFactoryBean sqlSessionFactoryBean = new SqlSessionFactoryBean();
         sqlSessionFactoryBean.setDataSource(readDataSource());
         sqlSessionFactoryBean.setMapperLocations(new PathMatchingResourcePatternResolver()
-                .getResource("class:mappers/read/*.xml"));
+                .getResources("classpath:**/mappers/read/*.xml"));
         return sqlSessionFactoryBean.getObject();
     }
 
     @Bean
-    public TransactionManager readTransactionManager() {
+    public DataSourceTransactionManager readTransactionManager() {
         DataSourceTransactionManager transactionManager = new DataSourceTransactionManager();
         transactionManager.setDataSource(readDataSource());
         return transactionManager;
