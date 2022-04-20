@@ -38,6 +38,11 @@ public class IndexController {
     @Autowired
     private WriteReadUserService writeReadUserService;
 
+    /**
+     * 新增写库数据
+     * @param writeUser
+     * @return
+     */
     @RequestMapping("/add/writeUser")
     public Map<String, Object> addWriteUser(@RequestBody WriteUser writeUser) {
         int addFlag = writeUserService.addWriteUser(writeUser);
@@ -48,6 +53,11 @@ public class IndexController {
         }
     }
 
+    /**
+     * 读写双库同时操作
+     * @param params
+     * @return
+     */
     @RequestMapping("add/writeReadUser")
     public Map<String, Object> addWriteReadUser(@RequestBody Map<String, Object> params) {
         WriteUser writeUser = JSONObject.parseObject(JSONObject.toJSONString(params.get("writeUser")), WriteUser.class);
