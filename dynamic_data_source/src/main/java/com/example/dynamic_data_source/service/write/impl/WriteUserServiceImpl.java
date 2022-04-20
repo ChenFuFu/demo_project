@@ -1,11 +1,12 @@
 package com.example.dynamic_data_source.service.write.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 import com.example.dynamic_data_source.dao.write.WriteUserMapper;
 import com.example.dynamic_data_source.entity.write.WriteUser;
 import com.example.dynamic_data_source.service.write.WriteUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  */
 
 @Service
-@Transactional
+@DS("master")
 public class WriteUserServiceImpl implements WriteUserService {
 
     @Autowired
@@ -38,6 +39,7 @@ public class WriteUserServiceImpl implements WriteUserService {
      * @return
      */
     @Override
+    @DSTransactional
     public int addWriteUser(WriteUser writeUser) {
         return writeUserMapper.addWriteUser(writeUser);
     }

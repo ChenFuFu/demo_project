@@ -2,6 +2,7 @@ package com.example.dynamic_data_source.service;
 
 import com.example.dynamic_data_source.entity.read.ReadUser;
 import com.example.dynamic_data_source.entity.write.WriteUser;
+import com.example.dynamic_data_source.exception.BDException;
 
 /**
  * @Author Chen
@@ -12,5 +13,5 @@ import com.example.dynamic_data_source.entity.write.WriteUser;
 
 public interface WriteReadUserService {
 
-    int addWriteReadUser(WriteUser writeUser, ReadUser readUser);
+    int addWriteReadUser(WriteUser writeUser, ReadUser readUser) throws Exception;
 }

@@ -1,11 +1,12 @@
 package com.example.dynamic_data_source.service.read.impl;
 
+import com.baomidou.dynamic.datasource.annotation.DS;
+import com.baomidou.dynamic.datasource.annotation.DSTransactional;
 import com.example.dynamic_data_source.dao.read.ReadUserMapper;
 import com.example.dynamic_data_source.entity.read.ReadUser;
 import com.example.dynamic_data_source.service.read.ReadUserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import org.springframework.transaction.annotation.Transactional;
 
 import java.util.List;
 
@@ -17,7 +18,7 @@ import java.util.List;
  */
 
 @Service
-@Transactional
+@DS("slave")
 public class ReadUserServiceImpl implements ReadUserService {
 
     @Autowired
@@ -34,6 +35,7 @@ public class ReadUserServiceImpl implements ReadUserService {
     }
 
     @Override
+    @DSTransactional
     public int addReadUser(ReadUser readUser) {
         return readUserMapper.addReadUser(readUser);
     }

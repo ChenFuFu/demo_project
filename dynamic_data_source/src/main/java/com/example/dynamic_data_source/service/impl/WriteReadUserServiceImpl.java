@@ -18,7 +18,6 @@ import org.springframework.stereotype.Service;
  */
 
 @Service
-@DSTransactional
 public class WriteReadUserServiceImpl implements WriteReadUserService {
 
     @Autowired
@@ -28,15 +27,16 @@ public class WriteReadUserServiceImpl implements WriteReadUserService {
     private ReadUserService readUserService;
 
     @Override
-    public int addWriteReadUser(WriteUser writeUser, ReadUser readUser) {
+    @DSTransactional
+    public int addWriteReadUser(WriteUser writeUser, ReadUser readUser) throws BDException {
         int writeRes = writeUserService.addWriteUser(writeUser);
         if (writeRes == 0) {
-            new BDException("新增写库数据异常！");
+            throw new BDException("新增写库数据异常！");
         }
 
         int readRes = readUserService.addReadUser(readUser);
-        if (writeRes == 0) {
-            new BDException("新增读库数据异常！");
+        if (readRes == 0) {
+            throw new BDException("新增读库数据异常！");
         }
         return 2;
     }
