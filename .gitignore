@@ -33,3 +33,5 @@ build/
 .mvn
 
 **/logs/
+
+.DS_Store
